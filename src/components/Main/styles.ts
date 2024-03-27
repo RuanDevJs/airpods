@@ -63,6 +63,8 @@ export const Title = styled.h1`
 
   text-align: center;
   letter-spacing: 4px;
+
+  transition: 0.32s ease-in-out;
 `;
 
 export const Description = styled.p`
@@ -76,6 +78,10 @@ export const Description = styled.p`
   animation-delay: 1.5s;
 
   text-align: left;
+
+  @media only screen and (max-width: 720px) {
+    display: none;
+  }
 `;
 
 /* @Phones */
@@ -126,6 +132,10 @@ export const Phones = styled.div`
 /* @Scroll Down */
 
 export const ScrollDown = styled.div`
+  @media only screen and (max-width: 720px) {
+    display: none;
+  }
+
   cursor: pointer;
 
   opacity: 0;

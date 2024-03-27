@@ -23,6 +23,10 @@ export const Header = styled.header`
   z-index: 1;
 
   background: linear-gradient(90deg, #edf4fa, 60%, #fff);
+
+  @media only screen and (max-width: 720px) {
+    display: none;
+  }
 `;
 
 export const Container = styled.div`
@@ -63,20 +67,6 @@ export const List = styled.li`
   opacity: 0;
   transition: 0.32s ease-in-out;
   border-bottom: 1px solid transparent;
-
-  &:nth-child(3) {
-    background-color: ${({ theme }) => theme.colors.blue};
-    border-radius: 50px;
-
-    padding: 0 12px;
-    text-align: center;
-
-    border: 0 !important;
-  }
-
-  &:nth-child(3) a {
-    color: ${({ theme }) => theme.colors.white};
-  }
 
   &:hover {
     filter: brightness(1.12);
@@ -132,5 +122,52 @@ export const Link = styled.a`
 
   &:hover {
     color: ${({ theme }) => theme.colors.black};
+  }
+`;
+
+export const Button = styled.button`
+  // @Fonts
+  font-size: 14px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.white};
+
+  // @Width & Sizes
+  width: 100px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+
+  background-color: ${({ theme }) => theme.colors.blue};
+  border-radius: 50px;
+
+  text-align: center;
+  text-decoration: none;
+
+  position: relative;
+
+  transition: 0.32s ease-in-out;
+
+  &::after {
+    opacity: 0;
+
+    content: "";
+    display: block;
+
+    width: 10px;
+    height: 40px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 12%);
+    border-radius: 50px;
+
+    transition: 0.32s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    width: 100%;
   }
 `;

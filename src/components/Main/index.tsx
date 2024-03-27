@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 import { Mouse } from "phosphor-react";
 
 import Phone1 from "../../assets/airpod1.png";
@@ -12,20 +12,22 @@ export default function Main() {
 
   function handleClick(event: MouseEvent<HTMLDivElement>) {
     event.preventDefault();
-    const airpodElement = document.querySelector("#airpods");
+    const airpodElement = document.getElementById("airpods");
 
-    const distanceToTop = airpodElement.offsetTop;
+    if (airpodElement && airpodElement !== null) {
+      const distanceToTop = airpodElement.offsetTop!;
 
-    scrollTo({
-      behavior: "smooth",
-      top: distanceToTop - 100,
-    });
+      scrollTo({
+        behavior: "smooth",
+        top: distanceToTop - 100,
+      });
+    }
   }
 
   return (
     <Styled.Container>
       <Styled.Info>
-        <Styled.Title>AirPods</Styled.Title>
+        <Styled.Title>Airpods</Styled.Title>
         <Styled.Description>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus
           ullam consequuntur hic ut corporis error reiciendis, molestias quasi.

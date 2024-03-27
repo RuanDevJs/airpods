@@ -38,7 +38,7 @@ export default function Header() {
               </Styled.Link>
             </Styled.List>
             <Styled.List>
-              <Styled.Link>Buy Now</Styled.Link>
+              <Styled.Button>Buy Now</Styled.Button>
             </Styled.List>
           </Styled.Menu>
         </Styled.Navigation>
